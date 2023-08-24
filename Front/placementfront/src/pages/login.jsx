@@ -1,10 +1,18 @@
 import { useForm} from 'react-hook-form';
+import axios from 'axios';
 
 const Login = ( ) => {
     const { register, handleSubmit, formState: { errors}} = useForm();
 
-    const submitForm = (data) => {
-        console.log(data);
+    const submitForm =async (data) => {
+        try {
+            const req = await axios.get('http://localhost:8000/', {
+                
+            });
+            console.log(req.json());
+        } catch (error) {
+            console.log(error);
+        }
     }
     return (
     <div className='flex justify-center items-center mt-14'>
