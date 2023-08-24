@@ -1,5 +1,5 @@
 
-POST http://localhost:8000/emp/signup
+POST http://localhost:8000/emp/signin
 Content-Type: application/json
 
 {
