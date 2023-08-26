@@ -1,11 +1,10 @@
 import { Router} from 'express';
-import passport from 'passport';
-import signUp from '../../controller/employee/singUp.js';
+import emp from '../../controller/employee/empAuth.js';
 
 const routerAuth = Router();
 
-routerAuth.route('/signin').post( passport.authenticate('local',));
+routerAuth.route('/signin').post( emp.signIn);
 
-routerAuth.route('/signup').post( signUp);
+routerAuth.route('/signup').post( emp.singUp);
 
 export default routerAuth;

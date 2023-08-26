@@ -1,15 +1,13 @@
 import { useForm} from 'react-hook-form';
-import axios from 'axios';
+import { useLogin } from '../hooks/useLogin';
 
 const Login = ( ) => {
-    const { register, handleSubmit, formState: { errors}} = useForm();
+    const { register, handleSubmit } = useForm();
+    const { login, error, isLoading } = useLogin();
 
-    const submitForm =async (data) => {
+    const submitForm =async (data1) => {
         try {
-            const req = await axios.get('http://localhost:8000/', {
-                
-            });
-            console.log(req.json());
+            await login(data1);
         } catch (error) {
             console.log(error);
         }
@@ -36,8 +34,7 @@ const Login = ( ) => {
                     {...register('password', {required: true})}
                 />
                 <div>
-                    {errors.email && <span className='p4 bg-red-200 text-lg font-bold'>Email is required</span>}
-                    {errors.password && <span className='p4 bg-red-200 text-lg font-bold'>Password is required</span>}
+                    {error && <span className='p4 bg-red-200 text-lg font-bold'>{error}</span>}
                 </div>
                 <div className='mt-2 flex justify-between items-center text-xl'>
                     <div>
@@ -46,7 +43,11 @@ const Login = ( ) => {
                     </div>
                 </div>
                 <div className='mt-8 flex flex-col gap-y-3'>
-                    <button type="submit" className='active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all w-full rounded-xl p-3 mt-4 border-2 bg-indigo-500 border-gray-400 font-bold text-lg text-white'>Sign in</button>
+                    <button 
+                    type="submit" 
+                    className='active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all w-full rounded-xl p-3 mt-4 border-2 bg-indigo-500 border-gray-400 font-bold text-lg text-white'
+                    disabled={isLoading}
+                    >Sign in</button>
                 </div>
                 <div className='flex justify-center items-center mt-6'>
                     <p className='font-bold'>Don&apos;t have An Account?</p>

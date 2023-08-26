@@ -1,13 +1,23 @@
 
-POST http://localhost:8000/emp/signin
+POST http://localhost:8000/emp/signup
 Content-Type: application/json
 
 {
     "name": "Alok",
-    "email": "test1@example.com",
-    "password": "test"
+    "email": "testdata@example.com",
+    "password": "test1234"
 }
 
 ###
 
 GET http://localhost:8000
+
+###
+
+POST http://localhost:8000/emp/signin
+Content-Type: application/json
+
+{
+    "email": "testdata@example.com",
+    "password": "test1234"
+}

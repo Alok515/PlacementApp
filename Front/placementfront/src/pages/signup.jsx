@@ -1,10 +1,16 @@
 import { useForm} from 'react-hook-form';
+import { useSignUp } from '../hooks/useSign';
 
 const SignUp = ( ) => {
-    const { register, handleSubmit, formState: { errors}} = useForm();
+    const { register, handleSubmit, } = useForm();
+    const { signup, error, isLoading } = useSignUp();
 
-    const submitForm = (data) => {
-        console.log(data);
+    const submitForm = async (data1) => {
+        try {
+            await signup(data1);
+        } catch (error) {
+            console.log(error);
+        }
     }
     return (
     <div className='flex justify-center items-center mt-14'>
@@ -35,12 +41,19 @@ const SignUp = ( ) => {
                     {...register('password', {required: true})}
                 />
                 <div>
-                    {errors.email && <span className='p4 bg-red-200 text-lg font-bold'>Email is required</span>}
-                    {errors.password && <span className='p4 bg-red-200 text-lg font-bold'>Password is required</span>}
+                    {error && <div className='text-red-600 font-mono'>
+                        {error}
+                    </div>}
                 </div>
 
                 <div className='mt-8 flex flex-col gap-y-3'>
-                    <button type="submit" className='active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all w-full rounded-xl p-3 mt-4 border-2 bg-indigo-500 border-gray-400 font-bold text-lg text-white'>Sign Up</button>
+                    <button 
+                        type="submit" 
+                        className='active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all w-full rounded-xl p-3 mt-4 border-2 bg-indigo-500 border-gray-400 font-bold text-lg text-white'
+                        disabled={isLoading}
+                    >
+                        Sign Up
+                    </button>
                 </div>
                 <div className='flex justify-center items-center mt-6'>
                     <p className='font-bold'>Have An Account?</p>
