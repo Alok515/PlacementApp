@@ -21,3 +21,8 @@ Content-Type: application/json
     "email": "testdata@example.com",
     "password": "test1234"
 }
+
+###
+
+GET http://localhost:8000/student/
+Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU5ZTJhYmQ0NmJmZjEzMzMwYzlhNjMiLCJpYXQiOjE2OTMxNTY3NDEsImV4cCI6MTY5MzQxNTk0MX0._fqjh_SA9qeO1gIho-xcPWhdr1G1yYKW5CRxXaEWz98"
