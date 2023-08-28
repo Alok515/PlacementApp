@@ -26,3 +26,36 @@ Content-Type: application/json
 
 GET http://localhost:8000/student/
 Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU5ZTJhYmQ0NmJmZjEzMzMwYzlhNjMiLCJpYXQiOjE2OTMxNTY3NDEsImV4cCI6MTY5MzQxNTk0MX0._fqjh_SA9qeO1gIho-xcPWhdr1G1yYKW5CRxXaEWz98"
+
+###
+POST http://localhost:8000/student/addstudent/64e9e2abd46bff13330c9a63
+Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU5ZTJhYmQ0NmJmZjEzMzMwYzlhNjMiLCJpYXQiOjE2OTMxNTY3NDEsImV4cCI6MTY5MzQxNTk0MX0._fqjh_SA9qeO1gIho-xcPWhdr1G1yYKW5CRxXaEWz98"
+Content-Type: application/json
+
+{
+    "name": "Student",
+    "email": "student@sdn.com",
+    "batch": "dec 2022",
+    "collage": "tctk",
+    "dsa": "234",
+    "react": "345",
+    "webd": "400"
+}
+
+###
+POST http://localhost:8000/student/addinterview/64e9e2abd46bff13330c9a63
+Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU5ZTJhYmQ0NmJmZjEzMzMwYzlhNjMiLCJpYXQiOjE2OTMxNTY3NDEsImV4cCI6MTY5MzQxNTk0MX0._fqjh_SA9qeO1gIho-xcPWhdr1G1yYKW5CRxXaEWz98"
+Content-Type: application/json
+
+{
+    "name": "Google",
+    "date": "2015-07-08"
+}
+
+###
+GET http://localhost:8000/student/getstudent/64e9e2abd46bff13330c9a63
+Authorization: Basic eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU5ZTJhYmQ0NmJmZjEzMzMwYzlhNjMiLCJpYXQiOjE2OTMxNTY3NDEsImV4cCI6MTY5MzQxNTk0MX0._fqjh_SA9qeO1gIho-xcPWhdr1G1yYKW5CRxXaEWz98
+
+###
+GET http://localhost:8000/student/getinterview/64e9e2abd46bff13330c9a63
+Authorization: Basic eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU5ZTJhYmQ0NmJmZjEzMzMwYzlhNjMiLCJpYXQiOjE2OTMxNTY3NDEsImV4cCI6MTY5MzQxNTk0MX0._fqjh_SA9qeO1gIho-xcPWhdr1G1yYKW5CRxXaEWz98

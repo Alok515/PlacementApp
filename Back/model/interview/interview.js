@@ -8,8 +8,20 @@ const interviewSchema = new Schema({
     date: {
         type: Date,
         required: true,
+    },
+    emp_id: {
+        type: Schema.Types.ObjectId,
+        ref: 'employee',
     }
 });
+
+interviewSchema.statics.addInterview =async function (interview) {
+    if (!interview) {
+        throw Error ("Fill all the fields");
+    }
+    const newInterviews = await this.create(interview);
+    return newInterviews;
+}
 
 const Interview = model('Interview', interviewSchema);
 

@@ -26,8 +26,9 @@ const Header = () => {
                     <>
                     <NavLink className="active:bg-blue-400 ml-2" to='/'>Home</NavLink>
                     <span className="ml-2">{emp.email}</span>
+                    <NavLink className="ml-2 active:bg-blue-400" to='/interview'>Interview</NavLink>
+                    <NavLink className="ml-2 active:bg-blue-400" to='/student'>Student</NavLink>
                     <button onClick={handleIt} className="ml-2">logout</button>
-
                     </>
                 }
             </nav>

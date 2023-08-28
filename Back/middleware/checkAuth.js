@@ -7,7 +7,7 @@ const checkAuth = async (req, res, next) => {
         return res.status(401).json({ error: 'Token required' });
     }
     try {
-        const token = JSON.parse(authorization);
+        const token = authorization.split(' ')[1];
         const { _id } = jwt.verify(token, process.env.JSECRET);
         req.emp = await Employee.findOne({ _id }).select(_id);
         next();

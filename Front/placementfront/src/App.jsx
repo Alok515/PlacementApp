@@ -9,6 +9,8 @@ import Home from './pages/Home';
 import Header from './layouts/Header';
 import Login from './pages/login';
 import SignUp from './pages/signup';
+import GetStudent from './pages/student/getstudent';
+import GetInterview from './pages/student/getInterview';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -16,6 +18,8 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path='/login' element={<Login />}/>
       <Route path='/signup' element={<SignUp />} />
+      <Route path='/student' element={<GetStudent />} />
+      <Route path='/interview' element={<GetInterview />} />
     </Route>
   )
 );
